@@ -1,9 +1,9 @@
-import { StatusCode } from "http-status-codes";     //코드 가독성을 위해 import
+import { StatusCodes } from "http-status-codes";     //코드 가독성을 위해 import
 
 //응답 상태 별 내용
 export const status = {
     //정상 작동 -> 성공
-    SUCCESS: { status: StatusCode.OK, "isSuccess": true, "code": 2000, "message": "성공적으로 전송되었습니다."},
+    SUCCESS: { status: StatusCodes.OK, "isSuccess": true, "code": 2000, "message": "성공적으로 전송되었습니다."},
 
     //일반 에러
     INTERNAL_SERVER_ERROR: {status: StatusCodes.INTERNAL_SERVER_ERROR, "isSuccess": false, "code": "COMMON000", "message": "서버 에러, 관리자에게 문의 바랍니다." },
@@ -18,7 +18,8 @@ export const status = {
     NICKNAME_NOT_EXIST: {status: StatusCodes.BAD_REQUEST, "isSuccess": false, "code": "MEMBER4002", "message": "닉네임은 필수입니다."},
 
     //데이터베이스 에러
-    PARAMETER_IS_WRONG: {status: StatusCodes.BAD_REQUEST, "isSuccess": false, "code": "DATABASE4001", "message": "쿼리 실행 시 전달되는 파라미터가 잘못되었습니다. 파라미터 개수 혹은 파라미터 형식을 확인해주세요."},
+    PARAMETER_IS_WRONG: {status: StatusCodes.BAD_REQUEST, "isSuccess": false, "code": "DATABASE4001", 
+    "message": "쿼리 실행 시 전달되는 파라미터가 잘못되었습니다. 파라미터 개수 혹은 파라미터 형식을 확인해주세요."},
 
     //게시물 에러
     ARTICLE_NOT_FOUND: {status: StatusCodes.NOT_FOUND, "isSuccess": false, "code": "ARTICLE4001", "message": "게시글이 없습니다."},

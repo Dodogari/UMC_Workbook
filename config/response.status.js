@@ -21,6 +21,14 @@ export const status = {
     PARAMETER_IS_WRONG: {status: StatusCodes.BAD_REQUEST, "isSuccess": false, "code": "DATABASE4001", 
     "message": "쿼리 실행 시 전달되는 파라미터가 잘못되었습니다. 파라미터 개수 혹은 파라미터 형식을 확인해주세요."},
 
+    //EMAIL_ALREADY_EXIST, CONFLICT 사용
+    EMAIL_ALREADY_EXIST: {status: StatusCodes.CONFLICT, isSuccess: false, "code": "DATABASE4009",
+    "message": "이미 존재하는 이메일입니다."},
+
+    //OWNER_ALREADY_EXIST, CONFLICT 사용
+    OWNER_ALREADY_EXIST: {status: StatusCodes.CONFLICT, isSuccess: false, "code": "DATABASE4009",
+    "message": "이미 존재하는 가게입니다."},
+
     //게시물 에러
     ARTICLE_NOT_FOUND: {status: StatusCodes.NOT_FOUND, "isSuccess": false, "code": "ARTICLE4001", "message": "게시글이 없습니다."},
 }

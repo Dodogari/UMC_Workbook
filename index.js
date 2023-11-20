@@ -6,6 +6,7 @@ import { specs } from './config/swagger.config.js';
 import SwaggerUi from 'swagger-ui-express';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import { ownerRouter } from './src/routes/owner.route.js';
 
 const app = express();
 const port = 3000;
@@ -23,7 +24,7 @@ app.use('/api-docs', SwaggerUi.serve, SwaggerUi.setup(specs));
 app.use('/umc_workbook', tempRouter);
 app.use('/user', userRouter);
 app.use('/temp', tempRouter);
-
+app.use('/owner', ownerRouter);
 
 // 서버 세팅
 app.set('port', process.env.PORT || 3000)   // 서버 포트 지정

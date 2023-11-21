@@ -7,6 +7,7 @@ import SwaggerUi from 'swagger-ui-express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import { ownerRouter } from './src/routes/owner.route.js';
+import { reviewRouter } from './src/routes/review.route.js';
 
 // .env 파일 사용 (환경 변수 관리)
 dotenv.config();
@@ -19,7 +20,8 @@ app.set('port', process.env.PORT || 3000)   // 서버 포트 지정
 
 app.use(cors());                            // cors 방식 허용
 app.use(express.static('public'));          // 정적 파일 접근
-app.use(express.json());                    // request의 본문을 json으로 해석할 수 있도록 함 (JSON 형태의 요청 body를 파싱하기 위함)
+app.use(express.json());                    // request의 본문을 json으로 해석할 수 있도록 함 (JSON 형태의 요청 body를 파싱하기 위함)\
+
 // 단순 객체 문자열 형태로 본문 데이터 해석
 app.use(express.urlencoded({extended: false})); 
 
@@ -31,6 +33,7 @@ app.use('/umc_workbook', tempRouter);
 app.use('/user', userRouter);
 app.use('/temp', tempRouter);
 app.use('/owner', ownerRouter);
+app.use('/review', reviewRouter);
 
 // 에러 핸들링
 app.use((err, req, res, next) => {

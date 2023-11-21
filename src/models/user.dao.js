@@ -74,3 +74,16 @@ export const getUserPreferToUserID = async (userID) => {
         throw new BaseError(status.PARAMETER_IS_WRONG);
     }
 }
+
+export const addUserMission = async (mission_id, user_id) => {
+    try{
+        const conn = await pool.getConnection();
+        
+        const result = await pool.query(insertUserMissionSql, [mission_id, user_id]);
+
+        conn.release();
+        
+    }catch (err) {
+        throw new BaseError(status.PARAMETER_IS_WRONG);
+    }
+}

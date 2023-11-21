@@ -8,7 +8,7 @@ import { addDBOwner } from "../models/owner.dao.js";
 export const registOwner = async (body) => {
     // 데이터 받아오기 - 사장님 테이블
 	const { name, category, local_id } = body;
-    console.log(name);
+    console.log(category);
 
     //가게 데이터로 들어올 것 : 상호명, 카테고리 (매핑이 너무 길어지므로 카테고리는 문자열로만)
     const addOwnerData = await addDBOwner(name, category, local_id);

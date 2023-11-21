@@ -13,18 +13,19 @@ export const addDBOwner = async (name, category, local_id) => {
         // 중복 데이터 확인 (가게 이름으로)
         const [confirm] = await pool.query(confirmName, name);
 
-        if(confirm.name.isExistName){
+        if(confirm.isExistName){
             conn.release();
             return -1;
         }
 
         // 가게 추가 쿼리문 실행
         const result = await pool.query(insertOwnerSql, [name, category, local_id]);
-        const getOwner = await pool.query(getLocalToOwnerID, result.local_id);
+        //const getOwner = await pool.query(getLocalToOwnerID, result.local_id);
         conn.release();
         return result;
         
     } catch (err) {
+        console.error(err);
         throw new BaseError(status.PARAMETER_IS_WRONG);
     }
 }

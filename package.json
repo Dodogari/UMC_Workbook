@@ -1,7 +1,6 @@
 {
   "name": "umc_workbook",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -28,5 +27,6 @@
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0"
   },
-  "keywords": []
+  "keywords": [],
+  "description": ""
 }

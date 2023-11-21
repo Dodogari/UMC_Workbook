@@ -1,8 +1,4 @@
-export const insertOwnerSql = "INSERT INTO owner (name, category) VALUES (?, ?);";
-
-export const getOwnerID = "SELECT * FROM owner WHERE owner_id = ?";
-
-export const connectLocal = "INSERT INTO local (name) VALUES (?);";
+export const insertOwnerSql = "INSERT INTO owner (name, category, local_id) VALUES (?, ?);";
 
 export const confirmName = "SELECT EXISTS(SELECT 1 FROM owner WHERE name = ?) as isExistName";
 

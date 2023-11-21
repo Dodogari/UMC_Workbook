@@ -4,11 +4,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const pool = mysql.createPool({
-    host: process.env.DB_HOST || 'localhost',
-    user: process.env.DB_USER || 'root',
-    port: process.env.DB_PORT || 3306,
-    database: process.env.DB_TABLE || 'umc_wb',
-    password: process.env.DB_PASSWORD || 'password',
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    port: process.env.DB_PORT,
+    database: process.env.DB_TABLE,
+    password: process.env.DB_PASSWORD,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
